@@ -10,20 +10,18 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Execution(ExecutionMode.CONCURRENT)
 public abstract class BaseTest {
-    protected Injector injector;
-    protected Browser browser;
+    protected static Injector injector;
+    protected static Browser browser;
     protected BrowserContext context;
     protected Page page;
 
     @BeforeAll
-    void setUpBase() {
+    static void setUpBase() {
         injector = Guice.createInjector(new PlaywrightModule());
         browser = injector.getInstance(Browser.class);
     }
@@ -45,7 +43,7 @@ public abstract class BaseTest {
     }
 
     @AfterAll
-    void tearDownBase() {
+    static void tearDownBase() {
         if (browser != null) {
             browser.close();
         }

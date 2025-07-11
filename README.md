@@ -39,6 +39,10 @@ Tests run in parallel by default. The parallel execution settings are defined in
 parallel threads by editing the property
 `junit.jupiter.execution.parallel.config.fixed.parallelism` in this file.
 
+Each test class shares a single browser instance created in `BaseTest`. The
+setup methods create a new browser context and page for every test method so
+parallel execution is safe.
+
 If you want to observe browser windows during execution, set `headless=false`
 in `src/main/resources/config.properties`.
 
