@@ -40,6 +40,16 @@ The project includes a sample test (`ExampleTest`) that opens the
 title contains the word `Playwright`. This demonstrates using the Guice
 injection setup provided in `BaseTest` and the `PlaywrightModule`.
 
+### Configuration
+
+Runtime configuration is stored in `src/main/resources/config.properties`.
+Currently the following settings are supported:
+
+```
+headless=true        # Launch browser in headless mode
+timeoutInSeconds=10  # Default timeout used by `WaitUtil`
+```
+
 ## Project Structure
 
 Typical Maven layout is recommended:
