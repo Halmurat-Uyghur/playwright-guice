@@ -35,12 +35,14 @@
             <artifactId>guice</artifactId>
             <version>${guice.version}</version>
         </dependency>
+      
         <!-- javax.inject annotations used by Guice -->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
+
     </dependencies>
 
     <build>
