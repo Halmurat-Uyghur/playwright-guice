@@ -35,7 +35,9 @@ mvn test
 ```
 
 Tests run in parallel by default. The parallel execution settings are defined in
-`src/test/resources/junit-platform.properties`.
+`src/test/resources/junit-platform.properties`. You can control the number of
+parallel threads by editing the property
+`junit.jupiter.execution.parallel.config.fixed.parallelism` in this file.
 
 ### Example Test
 
