@@ -33,6 +33,13 @@ Execute the following command to run the test suite:
 mvn test
 ```
 
+### Example Test
+
+The project includes a sample test (`ExampleTest`) that opens the
+[Playwright](https://playwright.dev/) website and asserts that the page
+title contains the word `Playwright`. This demonstrates using the Guice
+injection setup provided in `BaseTest` and the `PlaywrightModule`.
+
 ## Project Structure
 
 Typical Maven layout is recommended:
