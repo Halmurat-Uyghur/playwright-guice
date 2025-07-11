@@ -19,12 +19,14 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 public abstract class BaseTest {
     protected Injector injector;
     protected Browser browser;
+    protected com.microsoft.playwright.Playwright playwright;
     protected BrowserContext context;
     protected Page page;
 
     @BeforeAll
     void setUpBase() {
         injector = Guice.createInjector(new PlaywrightModule());
+        playwright = injector.getInstance(com.microsoft.playwright.Playwright.class);
         browser = injector.getInstance(Browser.class);
     }
 
@@ -48,6 +50,9 @@ public abstract class BaseTest {
     void tearDownBase() {
         if (browser != null) {
             browser.close();
+        }
+        if (playwright != null) {
+            playwright.close();
         }
         if (injector != null) {
             injector = null;
