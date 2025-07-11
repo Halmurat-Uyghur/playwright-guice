@@ -8,6 +8,7 @@ This project is a template for building a test automation framework in Java usin
 - **Google Guice** for dependency injection
 - **Maven** to handle builds and dependency resolution
 - Example structure for page objects and tests
+- **Parallel test execution** enabled via JUnit 5
 
 ## Getting Started
 
@@ -32,6 +33,9 @@ Execute the following command to run the test suite:
 ```bash
 mvn test
 ```
+
+Tests run in parallel by default. The parallel execution settings are defined in
+`src/test/resources/junit-platform.properties`.
 
 ### Example Test
 
