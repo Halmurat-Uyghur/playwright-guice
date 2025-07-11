@@ -39,6 +39,13 @@ Tests run in parallel by default. The parallel execution settings are defined in
 parallel threads by editing the property
 `junit.jupiter.execution.parallel.config.fixed.parallelism` in this file.
 
+If you want to observe browser windows during execution, set `headless=false`
+in `src/main/resources/config.properties`.
+
+For debugging parallel execution a utility test `ParallelDebugTest` is
+included. Each of its methods logs the current thread and waits a few seconds so
+overlapping execution becomes apparent in the console output.
+
 ### Example Test
 
 The project includes a sample test (`ExampleTest`) that opens the
